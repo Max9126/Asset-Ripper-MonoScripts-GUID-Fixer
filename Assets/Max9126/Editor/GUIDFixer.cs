@@ -140,7 +140,8 @@ namespace Max9126 {
                 long thisFileID = Unsupported.GetLocalIdentifierInFile(obj.GetInstanceID());
                 if (thisFileID != data.fileID)
                     continue;
-                if (obj is MonoScript script) {
+                var script = obj as MonoScript;
+                if (script != null) {
                     type = script.GetClass();
                 } else if (thisFileID == data.fileID) {
                     type = obj.GetType();
